@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÀI 4</title>
+</head>
+<style>
+    .container {
+        width: 1000px;
+        margin-top: 1000px;
+    }
+
+    img {
+        float: left;
+        margin-right: 15px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .post {
+        width: 500px;
+        margin-top: 5px;
+        border: 8px double rgba(100, 100, 100, 1);
+        border-radius: 16px;
+    }
+
+    .box-static {
+        position: static;
+        width: 100px;
+        border: 1px solid red;
+    }
+
+    .box-relative {
+        position: relative;
+        top: 20px;
+        left: 30px;
+        width: 100px;
+        border: 1px solid black;
+    }
+
+    .box-scroll-top {
+        position: relative;
+        top: 80%;
+        left: 80%;
+        width: 80px;
+    }
+
+    nav {
+        /* position: fixed; */
+        position: sticky;
+        top: 0px;
+        /* left: 0; */
+        width: 100%;
+        background-color: rgb(19, 201, 58);
+        color: antiquewhite;
+        text-align: center;
+        height: 50px;
+    }
+</style>
+
+<body>
+    <nav>Trang chủ / Tin tức / Liên hệ</nav>
+    <div class="container">
+        <div class="post">
+            <img src="image/_MG_1246.JPG" alt="" srcset="" width="100px">
+            <h3>Tiêu đề bái viết</h3>
+            <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into
+                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+                Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+    </div>
+
+    <h2>Position</h2>
+    <div class="box-static">
+        Box static
+    </div>
+    <div class="box-relative">
+        Box relative
+    </div>
+    <div class="box-scroll-top">
+        <img src="image/_MG_1264.JPG" alt="scroll top">
+    </div>
+</body>
+
+</html>
