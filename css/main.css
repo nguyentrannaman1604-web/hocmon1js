@@ -1,0 +1,15 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.box-grid {
+  background: green;
+  color: white;
+  padding: 40px;
+  text-align: center;
+  font-size: 20px;
+}
+.otherElement {
+  height: 500px;
+}

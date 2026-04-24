@@ -1,0 +1,13 @@
+.bgElement {
+  background-image: url(../image/ottawa.jpg);
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.bgElement h3 {
+  text-align: center;
+  line-height: 500px;
+  font-size: 40px;
+  color: white;
+}
