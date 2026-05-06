@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+
+<body>
+    <h3 id="message"> Máy tính JavaScript</h3>
+    Nhập số A: <input type="number" id="giaTriA"> <br>
+    Nhập số B: <input type="number" id="giaTriB">
+
+    <hr>
+    <button onclick="phepTinh('cong')"> Cộng </button>
+    <button onclick="phepTinh('tru')"> Trừ </button>
+    <button onclick="phepTinh('nhan')"> Nhân </button>
+    <button onclick="phepTinh('chia')"> Chia </button>
+    <p id="ketQua"></p>
+
+    <script>
+        function phepTinh(pt) {
+            let a = document.getElementById("giaTriA").value;
+            let b = document.getElementById("giaTriB").value;
+            a = parseInt(a);
+            b = parseInt(b);
+
+            var ketQua = null;
+            if (pt == 'cong') {
+                ketQua = a + b;
+            }
+            else if (pt == 'tru') {
+                ketQua = a - b;
+            }
+            else if (pt == 'nhan') {
+                ketQua = a * b;
+            }
+            else if (pt == 'chia') {
+                if (b == 0) {
+                    document.getElementById("ketQua").innerHTML = "b không được bằng 0";
+                    return;
+                } else {
+                    ketQua = a / b;
+                }
+               
+            }
+            document.getElementById("ketQua").innerHTML = ketQua;
+        }
+
+
+        
+
+
+    </script>
+</body>
+
+</html>
