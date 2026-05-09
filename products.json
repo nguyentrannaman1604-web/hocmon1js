@@ -19,5 +19,26 @@
         "img" : "image/xiaomi14.png"
 
 
+    },
+    {
+        "name": "Oppo Find X",
+        "price": 14000,
+        "img" : "image/xiaomi14.png"
+
+
+    },
+    {
+        "name": "Nokia X30",
+        "price": 9000,
+        "img" : "image/xiaomi14.png"
+
+
+    },
+    {
+        "name": "Vivo V29",
+        "price": 12000,
+        "img" : "image/xiaomi14.png"
+
+
     }
 ]

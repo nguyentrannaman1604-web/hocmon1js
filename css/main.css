@@ -1,3 +1,6 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -12,4 +15,64 @@
 }
 .otherElement {
   height: 500px;
+}
+
+.single-table {
+  background-color: rgb(245, 241, 241);
+  text-align: center;
+  margin-top: 50px;
+}
+.single-table h2 {
+  padding: 20px;
+  margin: 0px;
+}
+
+.price {
+  padding: 10px;
+  background-color: rgb(226, 224, 221);
+}
+.price span {
+  font-weight: bold;
+  font-size: 20px;
+}
+.price .dollar-icon {
+  position: relative;
+  top: -5px;
+  margin-right: 0px;
+  font-weight: normal;
+  font-size: 13px;
+}
+.single-table ul {
+  list-style: none;
+  padding: 0;
+}
+.single-table ul li {
+  padding: 15px;
+}
+
+.single-table .btn-primary {
+  background-color: #dedede;
+  border: none;
+  border-radius: 0;
+  color: #454545;
+  display: block;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.featured-table {
+  background-color: rgb(204, 192, 196);
+}
+.featured-table h2 {
+  color: white;
+  background-color: rgb(207, 83, 145);
+}
+
+.featured-table .price {
+  background-color: rgb(179, 34, 89);
+  color: white;
+}
+.featured-table .btn {
+  background-color: rgb(204, 17, 95);
+  color: white;
 }

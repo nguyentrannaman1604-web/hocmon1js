@@ -38,14 +38,14 @@
         }
         function renderProducts(list) {
             let html = "";
-            list.forEach(product => {
+            list.forEach(A => {
                 html = html + `
             <div class="col-md-2">
                 <div class="card mb-3">
-                    <img src="${product.img}" class="card-img-top">
+                    <img src="${A.img}" class="card-img-top">
                     <div class="card-body">
-                        <h5>${product.name}</h5>
-                        <p>${product.price}</p>
+                        <h5>${A.name}</h5>
+                        <p>${A.price}</p>
                     </div>
                 </div>
             </div>

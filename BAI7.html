@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function nganHang (callback) {
+            console.log ("lấy số thứ tự ...");
+            setTimeout(function() {
+                console.log("đến lượt bạn");
+                callback("hải");
+            }, 3000)
+        }
+
+        function khachHang (name) {
+            console.log("khách hàng" + name + "vào giao dịch");
+        }
+
+        function khachHangKhac () {
+            console.log ("khách hàng vào giao dịch");
+        }
+
+        nganHang(khachHang);
+        nganHang(khachHangKhac);
+
+
+    </script>
+</body>
+</html>

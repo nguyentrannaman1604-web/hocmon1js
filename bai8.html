@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" width="400">
+        <thead>
+            <tr>
+                <th>Tên</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+            </tr>
+        </thead>
+        <tbody id="cart-table"></tbody>
+    </table>
+
+    <button onclick="clearAll()">Xóa hết giỏ hàng</button>
+
+
+
+
+    <script>
+        var cart = [
+            { name: "Laptop", price: 1500, qty: 1 },
+            { name: "Mouse", price: 1500, qty: 1 },
+            { name: "Keyboard", price: 1500, qty: 1 },
+
+        ];
+
+        // localStorage.setItem("cart", JSON.stringify(cart));
+
+        if (!localStorage.getItem("cart")) {
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        var cartData = JSON.parse(localStorage.getItem("cart")) || [];
+        console.log(localStorage.getItem("cart"));
+
+        var tableBody = document.getElementById("cart-table");
+        let html = "";
+
+        cartData.forEach(item => {
+            html += `
+             <tr>
+                <td>${item.name}</td>
+                <td>${item.price}</td>
+                <td>${item.qty}</td>
+             </tr>
+            `;
+            tableBody.innerHTML = html;
+        });
+
+        renderCart();
+
+        function clearAll() {
+            localStorage.removeItem("cart"); // chỉ xóa cart
+            tableBody.innerHTML = ""; // xóa giao diện
+        }
+
+
+
+        // function clearAll() {
+        //     localStorage.clear();
+        // }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=bdevice-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="loadData()">Load data</button>
+    <div id="demo"></div>
+    <script>
+        function loadData() {
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("demo").innerHTML =
+                        xhr.responseText;
+                }
+            };
+            xhr.open("GET", "data.txt", true);
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Danh sách điện thoại</h2>
+    <div id="product-list"></div>
+    <br>
+    <div style="float:left; width: 100%; text-align: center;">
+        <button onclick="showMore()">Show more</button>
+    </div>
+
+
+
+    <script>
+        let products = [];
+        let currentIndex = 0;
+        let step = 3;
+        window.onload = function () {
+            loadProducts();
+        }
+        function loadProducts() {
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "products.json", true);
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    products = JSON.parse(xhr.responseText);
+                    showProducts();
+                }
+            };
+            xhr.send();
+        }
+
+        function showProducts() {
+            let html = "";
+            let nextIndex = currentIndex + step;
+            let list = products.slice(currentIndex, nextIndex);
+
+            list.forEach(product => {
+                html += `
+                <div style="float:left; width: 25%; text-align: center;">
+                    <img src="${product.img}" width="120">
+                    <p>${product.name}</p>
+                    <p>${product.price} VNĐ</p>
+                    <hr>
+                </div>
+
+                `;
+            });
+            document.getElementById("product-list").innerHTML += html;
+            currentIndex = nextIndex;
+        }
+        function showMore () {
+            showProducts ();
+        }
+
+
+
+    </script>
+</body>
+
+</html>
