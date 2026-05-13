@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2> Gio hang</h2>
+    <table border="1" width="800">
+        <thead>
+            <tr>
+                <th>Tên</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Hình ảnh</th>
+            </tr>
+        </thead>
+        <tbody id="cart-body"></tbody>
+    </table>
+
+    <button onclick="clearAll()">Xóa hết giỏ hàng</button>
+    <button onclick="deletedChecked()">Xóa kết quả được chọn</button>
+
+
+
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [
+            {
+                name: "Iphone 15",
+                price: 1500,
+                qty: 1,
+                img: "image/iphone15.jpg"
+            },
+            { name: "Samsung S24", price: 25, qty: 2, img: "image/samsungs24.png" },
+            { name: "Xiaomi 14", price: 70, qty: 1, img: "image/xiaomi14.png" }
+        ];
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // hàm này là do chạy lưu code nhiều lần nên trong local không có hình ảnh
+         localStorage.removeItem("cart")
+
+
+
+
+        function renderCart() {
+            let html = "";
+
+            cart.forEach((item, index) => {
+                html += `<tr>
+                    <td>${item.name}</td>
+                    <td>${item.price}</td>
+                    <td><input type="number" name="qty" onchange="updateQty(${index}, this.value)" value="${item.qty}" min="1" /></td>
+                     <td> <center><img src="${item.img}" alt="" width="50%"></center></td>
+                    </tr> `;
+            });
+
+
+            document.getElementById("cart-body").innerHTML = html;
+
+        }
+
+        function updateQty(index, newQty) {
+            cart[index].qty = Number(newQty);
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        renderCart();
+       
+
+        function clearAll() {
+            cart = [];
+
+            renderCart();
+        }
+
+    </script>
+</body>
+
+</html>
